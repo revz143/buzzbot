@@ -1,0 +1,244 @@
+:root {
+  --ink: #1a1b1e;
+  --panel: #26282e;
+  --panel-done: #202226;
+  --panel-hover: #2c2e35;
+  --line: #2e3035;
+  --edge-off: #3a3c42;
+  --hive: #f5b301;
+  --hive-bright: #ffd34d;
+  --hive-dim: #8a6a0e;
+  --cyan: #7fe8ff;
+  --text: #f2f0ea;
+  --text-body: #9a9ca2;
+  --text-dim: #6e7076;
+  --text-mute: #5a5c62;
+  --glow: 245, 179, 1;
+  --font-ui: 'Chakra Petch', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+  --font-body: 'Outfit', sans-serif;
+}
+
+/* BLOOM — pink/lavender skin */
+:root[data-theme='bloom'] {
+  --ink: #241a22;
+  --panel: #2f2230;
+  --panel-done: #291e2a;
+  --panel-hover: #382a3a;
+  --line: #3c2c3e;
+  --edge-off: #4c3a4e;
+  --hive: #ff7eb6;
+  --hive-bright: #ffa9cf;
+  --hive-dim: #8a4a68;
+  --cyan: #c9a0ff;
+  --text: #f6eef4;
+  --text-body: #a899a5;
+  --text-dim: #7c6e79;
+  --text-mute: #655864;
+  --glow: 255, 126, 182;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: var(--font-ui);
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  font-family: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+  color: inherit;
+}
+
+input {
+  font-family: var(--font-mono);
+  outline: none;
+}
+
+/* chamfered corner motifs (no border-radius anywhere) */
+.clip-panel {
+  clip-path: polygon(
+    0 0,
+    calc(100% - 18px) 0,
+    100% 18px,
+    100% 100%,
+    18px 100%,
+    0 calc(100% - 18px)
+  );
+}
+.clip-panel-lg {
+  clip-path: polygon(
+    0 0,
+    calc(100% - 22px) 0,
+    100% 22px,
+    100% 100%,
+    22px 100%,
+    0 calc(100% - 22px)
+  );
+}
+.clip-plate {
+  clip-path: polygon(0 0, calc(100% - 18px) 0, 100% 100%, 0 100%);
+}
+.clip-slant {
+  clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%);
+}
+.clip-cell {
+  clip-path: polygon(3px 0, 100% 0, calc(100% - 3px) 100%, 0 100%);
+}
+.clip-hex {
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+}
+
+@keyframes bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+@keyframes blink {
+  0%,
+  92%,
+  100% {
+    transform: scaleY(1);
+  }
+  95% {
+    transform: scaleY(0.1);
+  }
+}
+@keyframes neonPulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.45;
+  }
+}
+@keyframes pop {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.18);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes hazardMove {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 32px 0;
+  }
+}
+@keyframes sheen {
+  0% {
+    transform: translateX(-120%) skewX(-20deg);
+  }
+  60%,
+  100% {
+    transform: translateX(320%) skewX(-20deg);
+  }
+}
+@keyframes cellFlash {
+  0% {
+    box-shadow: 0 0 0 rgba(var(--glow), 0);
+  }
+  40% {
+    box-shadow: 0 0 14px rgba(var(--glow), 0.9);
+  }
+  100% {
+    box-shadow: 0 0 4px rgba(var(--glow), 0.35);
+  }
+}
+@keyframes sparkFly {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--dx), var(--dy)) scale(0.2);
+    opacity: 0;
+  }
+}
+@keyframes edgeGlow {
+  0%,
+  100% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+@keyframes scanSweep {
+  0% {
+    top: -15%;
+  }
+  100% {
+    top: 115%;
+  }
+}
+@keyframes allDoneFlash {
+  0%,
+  100% {
+    box-shadow:
+      0 24px 60px rgba(0, 0, 0, 0.6),
+      0 0 0 1px rgba(var(--glow), 0.2);
+  }
+  50% {
+    box-shadow:
+      0 24px 60px rgba(0, 0, 0, 0.6),
+      0 0 44px rgba(var(--glow), 0.55);
+  }
+}
+@keyframes nudgeFlash {
+  0%,
+  100% {
+    box-shadow:
+      0 24px 60px rgba(0, 0, 0, 0.6),
+      0 0 0 1px rgba(var(--glow), 0.2);
+  }
+  25%,
+  75% {
+    box-shadow:
+      0 24px 60px rgba(0, 0, 0, 0.6),
+      0 0 52px rgba(var(--glow), 0.7);
+  }
+}
+
+.hazard {
+  height: 8px;
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--hive) 0px,
+    var(--hive) 8px,
+    var(--ink) 8px,
+    var(--ink) 16px
+  );
+  background-size: 32px 8px;
+}
+.hazard.animate {
+  animation: hazardMove 0.8s linear infinite;
+}

@@ -1,0 +1,22 @@
+appId: com.buzzz.app
+productName: Buzzz
+directories:
+  buildResources: resources
+  output: release
+files:
+  - out/**
+  - resources/**
+  - "!**/*.map"
+asarUnpack:
+  - "**/*.node"
+win:
+  target:
+    - nsis
+  icon: resources/icon.ico
+nsis:
+  oneClick: true
+  deleteAppDataOnUninstall: false
+  shortcutName: Buzzz
+electronDownload:
+  cache: .electron-cache
+npmRebuild: true

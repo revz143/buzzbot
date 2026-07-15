@@ -1,0 +1,10 @@
+node_modules/
+out/
+release/
+.electron-cache/
+*.log
+*.tsbuildinfo
+insert-test.cjs
+check-fired.cjs
+design/
+.claude/
