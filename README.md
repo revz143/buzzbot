@@ -7,6 +7,12 @@ A futuristic floating desktop reminder widget for Windows. Always-on-top, framel
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178C6?logo=typescript&logoColor=white)
 ![SQLite](https://img.shields.io/badge/SQLite-better--sqlite3-003B57?logo=sqlite&logoColor=white)
 
+## Download
+
+[![Download Installer](https://img.shields.io/badge/⬇%20Download%20Installer-Windows%20x64-F5B301?style=for-the-badge&logo=windows&logoColor=black)](https://github.com/revz143/buzzbot/releases/latest)
+
+Grab `Buzzz Setup x.x.x.exe` from the [latest release](https://github.com/revz143/buzzbot/releases/latest) — one-click install, no admin required.
+
 ## Features
 
 - **Floating widget** — frameless, always-on-top, transparent window that docks anywhere on screen with magnetic edge snapping
