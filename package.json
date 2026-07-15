@@ -1,6 +1,6 @@
 {
   "name": "buzzz",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Buzzz — futuristic floating desktop reminder widget",
   "main": "./out/main/index.js",
   "author": "Oliver Quezon",
